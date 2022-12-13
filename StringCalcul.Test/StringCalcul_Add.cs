@@ -12,7 +12,9 @@ namespace StringCalcul.Test
             Assert.Equal(0, result);
 
         }
-        [Fact]
+
+        [Theory]
+        [InlineData("1",1)]
         public void Returns0GivenStringWith1()
         {
             var calcul = new StringCalcul();
