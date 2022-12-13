@@ -3,11 +3,12 @@ namespace StringCalcul.Test
     public class StringCalcul_Add
 
     {
+        private StringCalcul _calculator = new StringCalcul();
         [Fact]
+
         public void Returns0GivenEmptyString()
         {
-            var calcul = new StringCalcul();
-            var result = calcul.Add("");
+            var result = _calculator.Add("");
 
             Assert.Equal(0, result);
 
@@ -19,19 +20,19 @@ namespace StringCalcul.Test
         public void ReturnsNumberGivenStringWithOneNumber(string numbers, int exceptedResult)
         {
             var calcul = new StringCalcul();
-            var result = calcul.Add("1");
+            var result = _calculator.Add("1");
 
             Assert.Equal(exceptedResult, result);
 
         }
 
         [Theory]
-        [InlineData("1,3", 3)]
-        [InlineData("2,3",5)]
+        [InlineData("1,2,3", 6)]
+        [InlineData("2,3,4",9)]
         public void ReturnsSumGivenStringWithOneNumber(string numbers, int exceptedResult)
         {
             var calcul = new StringCalcul();
-            var result = calcul.Add("1");
+            var result = _calculator.Add("1");
 
             Assert.Equal(exceptedResult, result);
 
