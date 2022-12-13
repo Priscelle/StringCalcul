@@ -15,12 +15,25 @@ namespace StringCalcul.Test
 
         [Theory]
         [InlineData("1",1)]
-        public void Returns0GivenStringWith1()
+        [InlineData("2",2)]
+        public void ReturnsNumberGivenStringWithOneNumber(string numbers, int exceptedResult)
         {
             var calcul = new StringCalcul();
             var result = calcul.Add("1");
 
-            Assert.Equal(1, result);
+            Assert.Equal(exceptedResult, result);
+
+        }
+
+        [Theory]
+        [InlineData("1,3", 3)]
+        [InlineData("2,3",5)]
+        public void ReturnsSumGivenStringWithOneNumber(string numbers, int exceptedResult)
+        {
+            var calcul = new StringCalcul();
+            var result = calcul.Add("1");
+
+            Assert.Equal(exceptedResult, result);
 
         }
     }
