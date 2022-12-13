@@ -37,5 +37,15 @@ namespace StringCalcul.Test
             Assert.Equal(exceptedResult, result);
 
         }
+
+        [Theory]
+        [InlineData("\\n1,2,3", 6)]
+        public void ReturnSumGivenStringWithThreeComaOrNewLineSeparatedNumbers
+            (string numbers, int exceptedResult)
+        {
+            var result = _calculator.Add(numbers);
+
+            Assert.Equal(exceptedResult, result);
+        }
     }
 }
